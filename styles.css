@@ -1,0 +1,680 @@
+/* ============================================
+   ESTILOS - LANDING PAGE PANELES SOLARES
+   ============================================ */
+
+/* Reset: elimina márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS */
+:root {
+    --primary: #f59e0b;
+    --primary-hover: #d97706;
+    --primary-glow: rgba(245, 158, 11, 0.4);
+    --secondary: #fbbf24;
+    --bg-dark: #0a0a0f;
+    --bg-section: rgba(15, 15, 25, 0.7);
+    --bg-panel: rgba(15, 15, 25, 0.95); /* Más opaco para mejor legibilidad */
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(245, 158, 11, 0.5);
+    --glow-color: rgba(251, 191, 36, 0.6);
+
+    /* Variables dinámicas */
+    --card-bg-opacity: 0.03;
+    --card-border-radius: 20px;
+    --card-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    --card-hover-scale: 1.02;
+    --card-padding: 2.5rem;
+    --card-gap: 2rem;
+    --btn-border-radius: 12px;
+    --btn-hover-scale: 1.03;
+    --services-opacity: 0.7;
+    --contact-opacity: 0.7;
+    --section-padding: 6rem;
+    --network-opacity: 0.5;
+    --navbar-blur: 20px;
+    --navbar-opacity: 0.8;
+    --container-width: 1200px;
+    --title-size: 2.5rem;
+    --body-size: 1rem;
+    --transition-speed: 0.3s;
+    --hover-lift: 8px;
+    --glow-intensity: 0.25;
+    --border-opacity: 0.08;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Canvas */
+#networkCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(10, 10, 15, var(--navbar-opacity));
+    backdrop-filter: blur(var(--navbar-blur));
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-icon { font-size: 1.5rem; }
+
+.brand-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 20px var(--glow-color);
+}
+
+.nav-link:hover::after { width: 100%; }
+
+.nav-cta {
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--primary-glow);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 3rem 4rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 7vw, var(--title-size));
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: var(--btn-border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    border: none;
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(var(--btn-hover-scale));
+    box-shadow: 0 15px 40px var(--primary-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--primary-glow), inset 0 0 20px rgba(245, 158, 11, 0.1);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.stat-item { text-align: center; }
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+section {
+    position: relative;
+    z-index: 2;
+    padding: var(--section-padding) 3rem;
+}
+
+.section-title {
+    font-size: var(--title-size);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services { background: rgba(15, 15, 25, var(--services-opacity)); backdrop-filter: blur(10px); }
+.benefits { background: rgba(15, 15, 25, var(--benefits-opacity)); }
+.contact { background: rgba(15, 15, 25, var(--contact-opacity)); backdrop-filter: blur(10px); }
+
+.services-grid, .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--card-gap);
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.service-card, .benefit-item {
+    background: rgba(255, 255, 255, var(--card-bg-opacity));
+    border: 1px solid rgba(255, 255, 255, var(--border-opacity));
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover, .benefit-item:hover {
+    border-color: var(--primary);
+    background: rgba(245, 158, 11, 0.12);
+    transform: translateY(calc(var(--hover-lift) * -1)) scale(var(--card-hover-scale));
+    box-shadow: 0 0 40px rgba(245, 158, 11, var(--glow-intensity)), 0 20px 60px rgba(245, 158, 11, 0.15);
+}
+
+.card-icon, .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.service-card h3, .benefit-item h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: text-shadow 0.3s ease;
+}
+
+.service-card:hover h3, .benefit-item:hover h4 {
+    text-shadow: 0 0 20px var(--glow-color);
+}
+
+.service-card p, .benefit-item p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: var(--body-size);
+}
+
+.card-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.card-link:hover { text-shadow: 0 0 15px var(--glow-color); }
+
+/* Contact Form */
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-text {
+    color: var(--text-secondary);
+    font-size: var(--body-size);
+    margin-bottom: 2.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:hover { border-color: var(--border-hover); box-shadow: 0 0 20px rgba(245, 158, 11, 0.1); }
+.form-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 30px var(--primary-glow); }
+.form-textarea { min-height: 120px; resize: vertical; }
+
+.btn-full { width: 100%; margin-top: 0.5rem; }
+
+/* Footer */
+.footer {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border);
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   DOCK LATERAL & FLOATING MODULES
+   ============================================ */
+
+/* Contenedor del Dock (derecha, vertical) */
+.dock-container {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.dock {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(15, 15, 25, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    padding: 15px 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.dock-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dock-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.dock-btn.active {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Tooltips */
+.dock-tooltip {
+    position: absolute;
+    right: 120%;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background: var(--bg-panel);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid var(--border);
+}
+
+.dock-btn:hover .dock-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Módulos Flotantes (Paneles) */
+.floating-module {
+    position: fixed;
+    top: 50%;
+    right: 90px; /* A la izquierda del dock */
+    transform: translateY(-50%) translateX(20px);
+    width: 320px;
+    max-height: 80vh;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: hidden;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-module.active {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Cabecera del panel */
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+}
+
+.panel-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover { color: #ef4444; }
+
+/* Contenido del panel */
+.panel-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+/* Controles */
+.control-group { margin-bottom: 1.25rem; }
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+.control-group label span { color: var(--primary); }
+
+select, input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    outline: none;
+}
+select:focus { border-color: var(--primary); }
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    appearance: none;
+    cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Panel Actions */
+.panel-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+.btn-row { display: flex; gap: 0.5rem; }
+
+.save-btn, .export-btn, .import-btn, .reset-btn {
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.save-btn {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.5);
+    color: #4ade80;
+}
+.save-btn:hover {
+    background: rgba(34, 197, 94, 0.25);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.export-btn {
+    flex: 1;
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.5);
+    color: #60a5fa;
+}
+.export-btn:hover { background: rgba(59, 130, 246, 0.25); }
+
+.import-btn {
+    flex: 1;
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.5);
+    color: #c084fc;
+}
+.import-btn:hover { background: rgba(168, 85, 247, 0.25); }
+
+.reset-btn {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+.reset-btn:hover { border-color: #ef4444; color: #ef4444; }
+
+/* Content Editor Toolbar (Old styles modified to fit if needed) */
+/* Lo ocultamos porque ahora usamos el Dock button para togglear */
+#contentEditorToolbar {
+    display: none !important; /* Managed by JS/Dock logic mostly */
+}
+
+/* Estilos específicos para la edición inline */
+body.edit-mode [data-content] {
+    outline: 2px dashed rgba(245, 158, 11, 0.3);
+    outline-offset: 4px;
+    cursor: text;
+}
+body.edit-mode [data-content]:hover {
+    outline-color: var(--primary);
+    background: rgba(245, 158, 11, 0.05);
+}
+/* Toolbar de acciones de contenido (Guardar/Cancelar) */
+/* Haremos que aparezca como un panel flotante o cerca del dock cuando esté activo */
+.content-actions-panel {
+    position: fixed;
+    top: 50%;
+    right: 90px;
+    transform: translateY(-50%);
+    background: var(--bg-panel);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 999;
+}

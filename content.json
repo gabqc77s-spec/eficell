@@ -1,0 +1,298 @@
+{
+    "siteName": "Eficell",
+    "branding": {
+        "logoUrl": "/uploads/chromaclear-result (10).png",
+        "logoPosition": "left",
+        "logoEntrance": "slide-down",
+        "size": 160,
+        "navBehaviors": [
+            "sticky",
+            "auto-hide"
+        ],
+        "logoOverflow": true,
+        "logoOffsetY": 17,
+        "logoOffsetX": 28,
+        "logoEntranceDuration": 2700,
+        "logoEntranceDelay": 1400,
+        "shrinkRatio": 35,
+        "logoHoverScale": 120,
+        "networkLineColor": "#39bec0",
+        "networkGlowColor": "#b5e4ee",
+        "logoHover": "glow"
+    },
+    "styles": {
+        "primary": "#82f78a",
+        "secondary": "#eacd10",
+        "bgDark": "#1e1e2e"
+    },
+    "hero": {
+        "title": "Energía Sostenible Para Tu Futuro",
+        "subtitle": "Soluciones integrales en energía solar, eficiencia energética e hidrógeno verde. Acompañamos a empresas, instituciones y comunidades desde la evaluación inicial hasta la implementación de sistemas sustentables.",
+        "ctaPrimary": "Solicitar Evaluación",
+        "ctaSecondary": "Conocer Servicios",
+        "stats": [
+            {
+                "number": "31%",
+                "label": "Ahorro Garantizado"
+            },
+            {
+                "number": "101%",
+                "label": "Compromiso Ambiental"
+            },
+            {
+                "number": "3",
+                "label": "Años de Experiencia"
+            }
+        ],
+        "config": {}
+    },
+    "services": {
+        "title": "Nuestros Servicios",
+        "items": [
+            {
+                "icon": "⚡",
+                "title": "Sistemas Fotovoltaicos",
+                "description": "Instalación profesional de sistemas monofásicos y trifásicos adaptados a tu consumo y necesidades energéticas."
+            },
+            {
+                "icon": "🔧",
+                "title": "Mantenimiento",
+                "description": "Servicio preventivo y correctivo para mantener tus paneles funcionando al máximo rendimiento."
+            },
+            {
+                "icon": "📊",
+                "title": "Auditorías Energéticas",
+                "description": "Diagnósticos de consumo y evaluación técnica-económica para optimizar tus recursos energéticos."
+            },
+            {
+                "icon": "🌱",
+                "title": "Consultoría Verde",
+                "description": "Asesoría en integración de renovables, reducción de huella de carbono y certificaciones energéticas."
+            }
+        ],
+        "config": {
+            "layout": "carousel",
+            "cardEffect": "glow",
+            "hover": "lift",
+            "interaction": "focus",
+            "border": "none",
+            "background": {
+                "type": "none"
+            },
+            "effects": [
+                {
+                    "trigger": "hover",
+                    "actions": [
+                        "shake"
+                    ],
+                    "intensity": 75,
+                    "duration": 750,
+                    "overflow": false
+                },
+                {
+                    "trigger": "hover",
+                    "actions": [
+                        "scale",
+                        "lift",
+                        "dim"
+                    ],
+                    "intensity": 74,
+                    "duration": 650,
+                    "overflow": true
+                }
+            ],
+            "expandConfig": {
+                "maxWidth": 600,
+                "padding": 3,
+                "borderStyle": "neon",
+                "borderRadius": 16,
+                "iconScale": 1.5,
+                "iconPosition": "top",
+                "titleSize": 1.6,
+                "descSize": 1,
+                "contentAlign": "center",
+                "bgColor": "",
+                "postEffect": "none"
+            }
+        }
+    },
+    "benefits": {
+        "title": "Nuestros 5 Pilares",
+        "items": [
+            {
+                "icon": "🌍",
+                "title": "Sostenibilidad",
+                "description": "Reducimos la huella de carbono y promovemos el uso responsable de los recursos naturales."
+            },
+            {
+                "icon": "🤝",
+                "title": "Compromiso Social",
+                "description": "Trabajamos con comunidades, liceos y vecinos impulsando la educación ambiental."
+            },
+            {
+                "icon": "⚙️",
+                "title": "Excelencia Técnica",
+                "description": "Altos estándares y mejora continua con innovación tecnológica en cada proyecto."
+            },
+            {
+                "icon": "📚",
+                "title": "Educación",
+                "description": "Capacitación y transferencia de conocimientos para fortalecer capacidades locales."
+            },
+            {
+                "icon": "💚",
+                "title": "Valor Compartido",
+                "description": "Creamos empleo verde y relaciones de largo plazo basadas en confianza mutua."
+            }
+        ],
+        "config": {
+            "layout": "carousel",
+            "interaction": "expand",
+            "hover": "glow",
+            "border": "neon",
+            "background": {
+                "type": "gradient",
+                "opacity": 0.1,
+                "color1": "#0ba254",
+                "color2": "#00bfff"
+            },
+            "effects": [
+                {
+                    "trigger": "hover",
+                    "actions": [
+                        "glow",
+                        "pulse",
+                        "border-flow"
+                    ],
+                    "intensity": 76,
+                    "duration": 1950,
+                    "overflow": true
+                },
+                {
+                    "trigger": "hover",
+                    "actions": [
+                        "glow"
+                    ],
+                    "intensity": 1,
+                    "duration": 800,
+                    "overflow": false
+                }
+            ],
+            "expandConfig": {
+                "maxWidth": 600,
+                "padding": 3,
+                "borderStyle": "neon",
+                "borderRadius": 16,
+                "iconScale": 1.5,
+                "iconPosition": "top",
+                "titleSize": 1.6,
+                "descSize": 1,
+                "contentAlign": "center",
+                "bgColor": "",
+                "postEffect": "none"
+            },
+            "entrance": "flip-in"
+        }
+    },
+    "about": {
+        "title": "¿Quiénes Somos?",
+        "description": "Eficell Consultores SpA es una empresa fundada por dos socios con sólida experiencia técnica, orientada a entregar soluciones integrales en energía y sostenibilidad.",
+        "mission": {
+            "title": "Misión",
+            "text": "Desarrollar e implementar soluciones integrales en energías renovables, eficiencia energética e hidrógeno verde, mediante proyectos fotovoltaicos, eléctricos y sistemas sustentables tales como riego solar, sistemas de bombeo con paneles solares y cercos eléctricos solares, incorporando tecnologías innovadoras como la nanotecnología para optimizar los procesos de mantención y prolongar la vida útil de los activos, contribuyendo a la transición energética de empresas y comunidades con un equipo de profesionales idóneos y con experiencia, orientados a la sostenibilidad y al cuidado del medio ambiente."
+        },
+        "vision": {
+            "title": "Visión",
+            "text": "Ser una empresa líder en la región en el desarrollo de proyectos de innovación tecnológica en energías renovables, eficiencia energética e hidrógeno verde, reconocida por integrar soluciones de riego solar, sistemas de bombeo fotovoltaico, nanotecnología y consultoría en eficiencia energética en sus proyectos, para mejorar el desempeño, la eficiencia operativa y la durabilidad de los activos, aportando activamente a la transición energética hacia un modelo más limpio, eficiente y sustentable."
+        },
+        "objective": "Reducir al menos un 30% los costos operativos energéticos y mejorar la huella de carbono de nuestros clientes en los próximos 5 años.",
+        "config": {}
+    },
+    "team": {
+        "title": "Nuestro Equipo",
+        "items": [
+            {
+                "name": "Pamela Veas Cortés",
+                "role": "Gerente General",
+                "image": "/uploads/Imagen1.png",
+                "imgPosition": "2% 0%",
+                "imgZoom": 1.7
+            },
+            {
+                "name": "Pablo Navarro D.",
+                "role": "Gerente Operaciones - Ing. Eléctrico",
+                "image": "https://ui-avatars.com/api/?name=Pablo+Navarro&background=random&size=200"
+            },
+            {
+                "name": "Enrique Palacios",
+                "role": "Ing. Químico - Especialista en Fundición",
+                "image": "https://ui-avatars.com/api/?name=Enrique+Palacios&background=random&size=200"
+            },
+            {
+                "name": "Stephane Acuña",
+                "role": "Ing. Biotecnología - Especialista Proyecto Innovación",
+                "image": "https://ui-avatars.com/api/?name=Stephane+Acuna&background=random&size=200"
+            },
+            {
+                "name": "Julio Delgado",
+                "role": "Ing. Químico - Ing. Prevención Riesgo",
+                "image": "https://ui-avatars.com/api/?name=Julio+Delgado&background=random&size=200"
+            }
+        ],
+        "config": {
+            "background": {
+                "type": "none"
+            },
+            "effects": [
+                {
+                    "trigger": "click",
+                    "actions": [
+                        "expand"
+                    ],
+                    "intensity": 88,
+                    "duration": 1200,
+                    "overflow": true
+                },
+                {
+                    "trigger": "hover",
+                    "actions": [
+                        "blur-others"
+                    ],
+                    "intensity": 6,
+                    "duration": 400,
+                    "overflow": true
+                }
+            ],
+            "expandConfig": {
+                "maxWidth": 800,
+                "padding": 4.5,
+                "borderStyle": "solid",
+                "borderRadius": 32,
+                "iconScale": 3,
+                "iconPosition": "left",
+                "titleSize": 2.4,
+                "descSize": 1.3,
+                "contentAlign": "right",
+                "bgColor": "",
+                "postEffect": "none"
+            }
+        }
+    },
+    "contact": {
+        "title": "¿Listo Para el Cambio?",
+        "subtitle": "Obtén una evaluación gratuita y personalizada para tu proyecto energético",
+        "config": {}
+    },
+    "footer": {
+        "copyright": "© 2026 Eficell Consultores SpA. Energía sostenible para un futuro mejor."
+    },
+    "nav": {
+        "items": [
+            "Inicio",
+            "Servicios",
+            "Nosotros",
+            "Contacto"
+        ],
+        "cta": "Cotizar Ahora"
+    }
+}
