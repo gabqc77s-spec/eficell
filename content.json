@@ -1,7 +1,7 @@
 {
     "siteName": "Eficell",
     "branding": {
-        "logoUrl": "/uploads/chromaclear-result (10).png",
+        "logoUrl": "../uploads/chromaclear-result (10).png",
         "logoPosition": "left",
         "logoEntrance": "slide-down",
         "size": 160,
@@ -295,4 +295,5 @@
         ],
         "cta": "Cotizar Ahora"
     }
+
 }
