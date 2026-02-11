@@ -214,7 +214,7 @@
             {
                 "name": "Pamela Veas Cortés",
                 "role": "Gerente General",
-                "image": "/uploads/Imagen1.png",
+                "image": "https://gabqc77s-spec.github.io/eficell/uploads/Imagen1.png",
                 "imgPosition": "2% 0%",
                 "imgZoom": 1.7
             },
@@ -297,5 +297,6 @@
     }
 
 }
+
 
 
